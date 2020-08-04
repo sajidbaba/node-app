@@ -22,7 +22,7 @@
                 sh "chmod +x changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
                 sshagent(['kops-machine']) {
-                    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@52.66.145.128:/home/ec2-user/"
+                    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@52.66.145.128:/home/ubuntu/"
                     script{
                         try{
                             sh "ssh ubuntu@52.66.145.128 kubectl apply -f ."
